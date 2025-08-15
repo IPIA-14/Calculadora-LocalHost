@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = 1001;
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); //prcesa los datos enviados 
 
 app.get('/', (_req, res) => { //Donde aparece el apartado etc
   res.send(`
@@ -39,4 +39,9 @@ app.post('/calcular', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Login/menu en http://localhost:${PORT}`);
+});
+
+
+app.get('/inicio', (req, res) => {
+  res.sendFile(__dirname + '/Inicio.html');
 });
